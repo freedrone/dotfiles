@@ -42,6 +42,12 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
+# Android SDK
+if [ -d "$HOME/Programs/Android/Sdk" ]
+then
+    export ANDROID_HOME="$HOME/Programs/Android/Sdk"
+    export PATH="$PATH:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools"
+fi
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/Programs/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/Programs/google-cloud-sdk/path.zsh.inc"; fi
