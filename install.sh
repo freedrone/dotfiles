@@ -38,10 +38,10 @@ fi
 
 ## copy config from repository
 if [[ "$DRY_RUN" != true ]]; then    
-    wget -O- https://raw.githubusercontent.com/freedrone/dotfiles/master/.vimrc
-    wget -O- https://raw.githubusercontent.com/freedrone/dotfiles/master/.p10k.zsh
-    wget -O- https://raw.githubusercontent.com/freedrone/dotfiles/master/.zshrc
-    wget -O- https://raw.githubusercontent.com/freedrone/dotfiles/master/.gitconfig
+    curl -O https://raw.githubusercontent.com/freedrone/dotfiles/master/.vimrc
+    curl -O https://raw.githubusercontent.com/freedrone/dotfiles/master/.p10k.zsh
+    curl -O https://raw.githubusercontent.com/freedrone/dotfiles/master/.zshrc
+    curl -O https://raw.githubusercontent.com/freedrone/dotfiles/master/.gitconfig
 fi
 
 ## junegunn/vim-plug#installation
