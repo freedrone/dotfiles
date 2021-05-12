@@ -15,16 +15,6 @@ plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
-# CUSTOM EXPORTS
-## BEGIN
-export PLEX_HOME="/opt/plex/"
-## END
-
-# User configuration
-
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # Lines configured by zsh-newuser-install
@@ -41,6 +31,30 @@ zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
+
+########################################
+
+# Plex home directory
+export PLEX_HOME="/opt/plex/"
+
+########################################
+
+# Node Version Manager
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
+# GoLang CONF
+export PATH="$PATH:/usr/local/go/bin"
+
+# Laravel | Sail
+alias sail=./vendor/bin/sail
+
+# GitHub CLI completion
+compctl -K _gh gh
+
+# ROS
+source /opt/ros/noetic/setup.zsh
+source ~/Workspace/teknofest/karmasim_ws/devel/setup.zsh
 
 # Android SDK
 if [ -d "$HOME/Programs/Android/Sdk" ]
